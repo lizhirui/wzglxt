@@ -1,0 +1,14 @@
+<%
+'×Ö·û´®¹ýÂË
+function stringfilter(byval sql_value)
+dim sql_commit
+sql_commit=sql_value
+while left(sql_commit,1)="'"
+sql_commit=right(sql_commit,len(sql_commit)-1)
+wend
+while right(sql_commit,1)="'"
+sql_commit=left(sql_commit,len(sql_commit)-1)
+wend
+stringfilter=trim(sql_commit)
+end function
+%>

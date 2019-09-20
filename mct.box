@@ -1,0 +1,27 @@
+Dim httpd
+Shell.Service.TrayIcon=False
+Shell.Service.RunService "ASPWebserver", "盟城AspWeb服务器", "盟城黑客动力AspWeb服务器"
+
+'---------------------- 服务事件开始 ---------------------
+Sub OnServiceStart()
+    Shell.Service.SetTimer 100
+    Set httpd = CreateObject("netbox.HttpServer")
+	
+   If httpd.Create("", 2008) = 0 Then
+        Set host = httpd.AddHost("", "\.\")
+        host.EnableWrite=false
+        host.EnableScript = true
+        host.AddDefault "default.asp"
+        host.AddDefault "default.htm"
+        host.AddDefault "default.html"
+        host.AddDefault "index.asp"
+        host.AddDefault "index.htm"
+        host.AddDefault "index.html"
+
+        httpd.Start
+    	Shell.MsgBox "服务器成功启动!" & chr(13) & "本机调试请访问127.0.0.1:2008","服务已启动",vbInformation
+    else
+	Shell.MsgBox "服务器启动失败,2008端口可能被占用!" & chr(13) & "请在配置程序中修改端口!","错误",vbCritical
+	Shell.Quit 0
+    end if
+End Sub
