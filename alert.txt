@@ -1,0 +1,6 @@
+Hi, master:
+    There are some security issues in you Web Server, you made the directory 
+of Web appliction can be written, which means a hacker can write file to your 
+server, please fix it (just remove the write operation).
+    Good luck ;)
+                                                                            Yours, ZwelL

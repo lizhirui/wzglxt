@@ -1,0 +1,34 @@
+<style type="text/css">
+.settop{ margin-top: 150px;}
+body {
+	background-color:#63B8FF;
+	color:#DBF270;
+}
+table {
+border-collapse:separate;
+}
+select {
+color:#CC33FF;
+background:#FFFF00;
+}
+input {
+color:#CC33FF;
+background:#FFFF00;
+}
+table,tr,td {
+border-color:#DBF270;
+}
+A:link {
+ FONT-SIZE: 16px; COLOR: #912CEE; TEXT-DECORATION: none
+}
+A:visited {
+ FONT-SIZE: 16px; COLOR: #912CEE; TEXT-DECORATION: none
+}
+A:active {
+ FONT-SIZE: 16px; COLOR: #912CEE; TEXT-DECORATION: none
+}
+A:hover {
+ FONT-SIZE: 16px; COLOR: #912CEE; TEXT-DECORATION: none
+}
+.css_text {width:150px ;height:20px}
+</style>

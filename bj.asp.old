@@ -1,0 +1,20 @@
+<%@LANGUAGE="VBSCRIPT" CODEPAGE="936"%>
+<!--#include file="conn.asp"-->
+<!--#include file="css.css"-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+</head>
+<body>
+<%
+if trim(request.form("wzname"))="" and trim(request.form("wztext"))="" then
+	response.redirect("information.asp")
+end if
+rs.open "select * from wz where id="&request.form("wzid"),conn,3,3	
+rs("wzname")=request.form("wztitle")
+rs("wztext")=request.form("wztext")
+rs("wztypeID")=request.form("wztype")
+rs.update
+rs.close
+%>
+</body>
+</html>
